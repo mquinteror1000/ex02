@@ -83,3 +83,10 @@ Cambiar duaño a la carpeta raiz
 ```
 permisos especiales
 
+```shellsession
+[martin@localhost ~]$ sudo chmod 2770 /america
+[martin@localhost ~]$ sudo chmod 2770 /asia
+[martin@localhost ~]$ sudo chmod 2770 /europa
+
+```
+
