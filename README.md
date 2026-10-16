@@ -206,4 +206,18 @@ deje asi el index.html
 </html>
 
 ```
+Ya responde con mis datos
+```shellsession
+[martin@localhost ~]$ curl http://localhost:8090
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Martin Quintero Rubio</title>
+</head>
+<body>
+<p>Martin Quintero Rubio</p>
+</body>
+</html>
+[martin@localhost ~]$
 
+```
