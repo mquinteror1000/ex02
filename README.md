@@ -1,5 +1,10 @@
 ## EX01
 ## PV
+Crear particion con
+```bash
+sudo cfsisk
+```
+
 ```bash
 sudo vgcreate martin /dev/vda4
 sudo lvcreate -L 500M -n america martin
