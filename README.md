@@ -112,4 +112,52 @@ sudo dnf install epel-release
 sudo dnf install htop
 sudo dnf install tree
 ```
+## PODAMAN
+```bash
+podman network create red-martin
+podman volume create vol-martin
 
+```
+
+### Construir imagen apartir del containerfile
+moverse a home y ahí crear un containerfile
+```shellsession
+[martin@localhost ~]$ cd --
+[martin@localhost ~]$ vim Containerfile 
+```
+Colocar el contendido 
+```bash
+# Containerfile · Examen DevOps 2026 · Módulo 1
+FROM docker.io/library/httpd:2.4
+LABEL curso="devops2026" examen="devops2026-m1"
+LABEL alumno="Martin Quintero"
+RUN sed -i 's/^#ServerName .*/ServerName examen.local:80/' /usr/local/apache2/conf/httpd.conf
+EXPOSE 80
+```
+
+### Construir la imagen basada en el containerfile
+```shellsesion
+[martin@localhost ~]$ podman build -t examen-web:1.0 .
+## crear el container
+podman run -d --name web-martin --network red-martin -v vol-martin:/usr/local/apache2/htdocs:Z -p 8090:80 examen-web:1.0
+```
+
+#### permitir acceso a puerto 8090 por tcp
+```shellsession
+sudo firewall-cmd --permanent --add-port=8090/tcp
+```
+
+probar
+```shellsesion
+[martin@localhost ~]$ curl http://localhost:8090
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>It works! Apache httpd</title>
+</head>
+<body>
+<p>It works!</p>
+</body>
+</html>
+```
+si responde
