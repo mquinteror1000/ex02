@@ -74,3 +74,12 @@ uid=8000(atlantida) gid=8000(atlantida) grupos=8000(atlantida)
 ```
 se queja pero si lo hace
 
+
+Cambiar duaño a la carpeta raiz
+```shellsession
+[martin@localhost ~]$ sudo chown root:america /america
+[martin@localhost ~]$ sudo chown root:asia /asia
+[martin@localhost ~]$ sudo chown root:europa /europa
+```
+permisos especiales
+
