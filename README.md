@@ -161,3 +161,49 @@ probar
 </html>
 ```
 si responde
+
+Modificar el index en el contenedor para poner el nombre
+```shellsession
+[martin@localhost ~]$ podman volume ls
+DRIVER      VOLUME NAME
+local       vol-martin
+[martin@localhost ~]$ podman volume inspect vol-martin
+[
+     {
+          "Name": "vol-martin",
+          "Driver": "local",
+          "Mountpoint": "/home/martin/.local/share/containers/storage/volumes/vol-martin/_data",
+          "CreatedAt": "2026-10-16T08:39:16.915886949-06:00",
+          "Labels": {},
+          "Scope": "local",
+          "Options": {},
+          "MountCount": 0,
+          "LockNumber": 2
+     }
+]
+[martin@localhost ~]$
+
+
+```
+Entondes modificar el index
+con podman unshare para que no hay problemas de permisos
+```shellsession
+[martin@localhost _data]$ cd /home/martin/.local/share/containers/storage/volumes/vol-martin/_data
+[martin@localhost _data]$ podman unshare
+[root@localhost _data]# vim index.html 
+
+```
+deje asi el index.html
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Martin Quintero Rubio</title>
+</head>
+<body>
+<p>Martin Quintero Rubio</p>
+</body>
+</html>
+
+```
+
