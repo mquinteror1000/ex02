@@ -96,7 +96,12 @@ Permios para atlantida mediante ACL
 [martin@localhost ~]$ sudo setfacl -m u:atlantida:rwx /europa
 
 ```
-
+ultimo check, para que herede atlantida los permisos cuando creen nuevos directorios
+```shellsesison
+[martin@localhost ~]$ sudo setfacl -d -m u:atlantida:rwx /america
+[martin@localhost ~]$ sudo setfacl -d -m u:atlantida:rwx /asia
+[martin@localhost ~]$ sudo setfacl -d -m u:atlantida:rwx /europa
+```
 
 
 
