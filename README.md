@@ -96,3 +96,15 @@ Permios para atlantida mediante ACL
 [martin@localhost ~]$ sudo setfacl -m u:atlantida:rwx /europa
 
 ```
+
+
+
+
+## DNF
+intalar epel-release
+```bash
+sudo dnf install epel-release
+sudo dnf install htop
+sudo dnf install tree
+```
+
