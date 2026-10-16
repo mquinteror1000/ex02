@@ -89,4 +89,10 @@ permisos especiales
 [martin@localhost ~]$ sudo chmod 2770 /europa
 
 ```
+Permios para atlantida mediante ACL
+```shellsession
+[martin@localhost ~]$ sudo setfacl -m u:atlantida:rwx /america
+[martin@localhost ~]$ sudo setfacl -m u:atlantida:rwx /asia
+[martin@localhost ~]$ sudo setfacl -m u:atlantida:rwx /europa
 
+```
